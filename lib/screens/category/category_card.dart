@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news_app/screens/category/catogory_model.dart';
+import 'package:news_app/screens/category/models/catogory_model.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
@@ -26,13 +26,13 @@ class CategoryCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(catogoryModel.imagePath, width: 100.w, fit: BoxFit.contain),
+            Image.asset(catogoryModel.imagePath, width: 90.w, fit: BoxFit.contain),
             Text(
               catogoryModel.title,
               style: Theme.of(context)
                   .textTheme
                   .titleLarge!
-                  .copyWith(fontSize: 20.sp, fontWeight: FontWeight.w400),
+                  .copyWith(fontSize: 18.sp, fontWeight: FontWeight.w400,color: Colors.black),
             )
           ],
         ),

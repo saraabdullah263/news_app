@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app/comman/app_theme.dart';
-import 'package:news_app/screens/category/catogeries_screen.dart';
+import 'package:news_app/comman/widgets/custom_textfaild.dart';
+import 'package:news_app/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,11 +21,14 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'First Method',
+          routes: {
+            HomeScreen.routeName: (_) => const HomeScreen(),
+             CustomTextfaild.routeName: (_) =>const CustomTextfaild()
+          },
           theme:AppTheme.theme,
-          home: child,
+          initialRoute:  HomeScreen.routeName
         );
       },
-      child:const SafeArea(child: CatogeriesScreen()),
     );
   }
 }

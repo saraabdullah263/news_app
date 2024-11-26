@@ -2,44 +2,39 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app/comman/app_assets.dart';
 import 'package:news_app/comman/app_colors.dart';
-import 'package:news_app/comman/widgets/custom_drawer.dart';
 import 'package:news_app/screens/category/category_card.dart';
-import 'package:news_app/screens/category/catogory_model.dart';
+import 'package:news_app/screens/category/models/catogory_model.dart';
 
-class CatogeriesScreen extends StatelessWidget {
-  const CatogeriesScreen({super.key});
-
+class CatogeriesView extends StatelessWidget {
+  const CatogeriesView({super.key, required this.onSelectCategory});
+ final Function (CatogoryModel) onSelectCategory;
+//business entertainment general health science sports technology.
   @override
   Widget build(BuildContext context) {
     List<CatogoryModel> catogories = [
       CatogoryModel(
+        id: 'sports',
           imagePath: AppAssets.ballImage, title: 'Sports', color: AppColors.sportColor),
       CatogoryModel(
-          imagePath: AppAssets.politicsImage, title: 'Politics', color: AppColors.ploticsColor),
+        id: 'technology',
+          imagePath: AppAssets.technologyImage, title: 'Technology', color: AppColors.technologyColor),
       CatogoryModel(
+        id: 'health',
           imagePath: AppAssets.healthImage, title: 'Health', color: AppColors.healthColor),
       CatogoryModel(
+        id: 'business',
           imagePath: AppAssets.bussinesImage, title: 'Business', color: AppColors.bussnissColor),
       CatogoryModel(
-          imagePath: AppAssets.environmentImage, title: 'Environment', color: AppColors.environmentColor),
+        id: 'entertainment',
+          imagePath: AppAssets.entertainmentImage, title: 'Entertainment', color: AppColors.entertainmentColor),
       CatogoryModel(
+        id: 'science',
           imagePath: AppAssets.scienceImage, title: 'Scince', color: AppColors.scinceColor),
     ];
-    return Scaffold(
-      drawer: const CustomDrawer(),
-      appBar: AppBar(
-        title: const Text('News App'),
-      ),
-      body: Container(
+    return  Container(
         height: double.infinity,
         width: double.infinity,
         padding: EdgeInsets.symmetric(vertical: 35.h, horizontal: 35.w),
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(
-                  AppAssets.patternimage,
-                ),
-                fit: BoxFit.cover)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -56,15 +51,20 @@ class CatogeriesScreen extends StatelessWidget {
                       mainAxisSpacing: 20.h,
                       crossAxisSpacing: 25.w,
                       crossAxisCount: 2),
-                  itemCount: 6,
-                  itemBuilder: (context, index) => CategoryCard(
-                      index: index, catogoryModel: catogories[index]),
+                  itemCount: catogories.length,
+                  itemBuilder: (context, index) => GestureDetector(
+                     onTap: () {
+                      onSelectCategory(catogories[index]);
+                     
+                    },
+                    child: CategoryCard(
+                        index: index, catogoryModel: catogories[index]),
+                  ),
                 ),
               ),
             )
           ],
         ),
-      ),
     );
   }
 }

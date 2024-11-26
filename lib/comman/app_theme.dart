@@ -20,7 +20,7 @@ class AppTheme {
             ),
             headlineSmall: TextStyle(
               fontWeight: FontWeight.w700,
-              fontSize: 22.sp
+              fontSize: 22.sp 
             )
           )
           );
