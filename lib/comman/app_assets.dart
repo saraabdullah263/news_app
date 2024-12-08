@@ -8,4 +8,6 @@ static String politicsImage='assets/images/Politics.png';
 static String scienceImage='assets/images/science.png';
 static String entertainmentImage='assets/images/entertainment.jpg';
 static String technologyImage='assets/images/technology.jpg';
+static String splashIcon='assets/images/logoo.png';
+
 }

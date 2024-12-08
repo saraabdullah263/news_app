@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/comman/app_assets.dart';
 import 'package:news_app/comman/widgets/custom_drawer.dart';
-import 'package:news_app/comman/widgets/custom_textfaild.dart';
 import 'package:news_app/screens/category/categroy_details_view.dart';
 import 'package:news_app/screens/category/catogeries_view.dart';
 import 'package:news_app/screens/category/models/catogory_model.dart';
+import 'package:news_app/screens/home/search_screen/search_veiw/search_screen_view.dart';
 import 'package:news_app/screens/settings/settings_view.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding:  EdgeInsets.all(10.0),
                   child: Icon(Icons.search),
                 ),onPressed: () {
-                 Navigator.of(context).pushNamed(CustomTextfaild.routeName);
+                showSearch(context: context, delegate: SearchScreen());
                 },)
               ]:null
             ),

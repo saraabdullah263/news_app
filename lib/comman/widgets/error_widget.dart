@@ -9,6 +9,6 @@ final String errorMasege;
   Widget build(BuildContext context) {
     return Center(
             child: Text('Error ${errorMasege.toString()}'),
-          );;
+          );
   }
 }

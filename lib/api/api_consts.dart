@@ -3,5 +3,6 @@ class ApiConsts{
   static String sourcseEndPoints='/v2/top-headlines/sources';
   static String newsEndPoints='/v2/everything';
   static String apiKey='5b9fd4413783486aa948ad8d6f7fec05';
+  // static String articalEndPoints='/v2/top-headlines/sources';
   //static String categroy='business';
 }

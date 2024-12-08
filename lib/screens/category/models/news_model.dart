@@ -51,6 +51,8 @@ class Articles {
     content = json['content'];
   }
 
+  where(Function(dynamic article) param0) {}
+
 }
 
 
